@@ -58,7 +58,7 @@ module Datadog
 
           # call the rest of the stack
           status, headers, response = @app.call(env)
-        rescue StandardError => e
+        rescue Exception => e
           # catch exceptions that may be raised in the middleware chain
           # Note: if a middleware catches an Exception without re raising,
           # the Exception cannot be recorded here
